@@ -1,7 +1,33 @@
 fun main() {
     println("Bem vindo ao Bytebank");
+    val contaAlex = Conta();
+    contaAlex.titular = "Alex";
+    contaAlex.numero = 1000;
+    contaAlex.saldo = 200.0
 
+    val contaFran = Conta();
+    contaFran.titular = "Fran";
+    contaFran.numero = 1001;
+    contaFran. saldo = 300.0
+
+    println(contaFran.titular);
+    println(contaFran.numero);
+    println(contaFran.saldo);
+    println("======================");
+    println(contaAlex.titular);
+    println(contaAlex.numero);
+    println(contaAlex.saldo);
+}
+
+class Conta {
+    var titular = "";
+    var numero = 0;
+    var saldo = 0.0;
+}
+
+fun testaLacos() {
     // conta de 1 até 5
+    var i = 0;
     for (i in 1..5) {
         val titular = "Alex $i";
         val numeroConta = 1000 + i;
@@ -36,8 +62,6 @@ fun main() {
         println("saldo da conta $saldo");
         println();
     }
-//    testaCondicoes(saldo);
-
 }
 
 fun testaCondicoes(saldo: Double) {
