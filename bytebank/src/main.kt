@@ -1,13 +1,9 @@
 fun main() {
     println("Bem vindo ao Bytebank");
-    val contaAlex = Conta();
-    contaAlex.titular = "Alex";
-    contaAlex.numero = 1000;
+    val contaAlex = Conta("Alex", 1000);
     contaAlex.deposita(200.0);
 
-    val contaFran = Conta();
-    contaFran.titular = "Fran";
-    contaFran.numero = 1001;
+    val contaFran = Conta("Fran", 1001);
     contaFran.deposita(300.0);
 
     println(contaFran.titular);
@@ -59,6 +55,11 @@ class Conta {
     var saldo = 0.0
         private set
 
+    constructor(titular: String, numeroDaConta: Int) {
+        this.titular = titular;
+        this.numero = numeroDaConta;
+    }
+
     fun deposita(valor: Double) {
         if (valor > 0)
             this.saldo += valor;
@@ -90,9 +91,9 @@ fun testaCopiasEReferencias() {
 
     println("numeroX $numeroX\nnumeroY $numeroY");
 
-    val contaJoao = Conta()
+    val contaJoao = Conta("João", 1002)
     contaJoao.titular = "João"
-    var contaMaria = contaJoao
+    var contaMaria = Conta("Maria", 1003)
     contaMaria.titular = "Maria"
 
     println("titular conta joao: ${contaJoao.titular}")
