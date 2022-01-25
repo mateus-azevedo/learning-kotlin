@@ -8,7 +8,7 @@ fun main() {
     val contaFran = Conta();
     contaFran.titular = "Fran";
     contaFran.numero = 1001;
-    contaFran. saldo = 300.0
+    contaFran.saldo = 300.0
 
     println(contaFran.titular);
     println(contaFran.numero);
@@ -42,6 +42,15 @@ fun main() {
     contaFran.saca(500.0);
     println(contaFran.saldo);
 
+    println("transferencia da conta da Fran para o Alex");
+
+    if (contaFran.transfere(100.0, contaAlex))
+        println("Transferido com sucesso");
+    else
+        println("Falha na tranferencia");
+
+    println("Saldo Alex: R$${contaAlex.saldo}");
+    println("Saldo Fran: R$${contaFran.saldo}");
 }
 
 class Conta {
@@ -57,6 +66,17 @@ class Conta {
         if (saldo >= valor) {
             saldo -= valor;
         }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (saldo >= valor) {
+            saldo -= valor;
+            destino.deposita(valor);
+            return true;
+        }
+
+        return false;
+
     }
 }
 
@@ -119,9 +139,9 @@ fun testaLacos() {
 }
 
 fun testaCondicoes(saldo: Double) {
-    if(saldo > 0.0){
+    if (saldo > 0.0) {
         println("conta é positiva")
-    } else if (saldo == 0.0){
+    } else if (saldo == 0.0) {
         println("conta é neutra")
     } else {
         println("conta é negativa")
