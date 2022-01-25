@@ -1,9 +1,9 @@
 fun main() {
     println("Bem vindo ao Bytebank");
-    val contaAlex = Conta("Alex", 1000);
+    val contaAlex = Conta(titular = "Alex", numero = 1000);
     contaAlex.deposita(200.0);
 
-    val contaFran = Conta("Fran", 1001);
+    val contaFran = Conta(titular = "Fran", numero = 1001);
     contaFran.deposita(300.0);
 
     println(contaFran.titular);
@@ -38,18 +38,22 @@ fun main() {
 //    contaFran.saca(500.0);
 //    println(contaFran.saldo);
 //
-//    println("transferencia da conta da Fran para o Alex");
-//
-//    if (contaFran.transfere(100.0, contaAlex))
-//        println("Transferido com sucesso");
-//    else
-//        println("Falha na tranferencia");
-//
-//    println("Saldo Alex: R$${contaAlex.saldo}");
-//    println("Saldo Fran: R$${contaFran.saldo}");
+    println("transferencia da conta da Fran para o Alex");
+
+    if (contaFran.transfere(destino = contaAlex, valor = 300.0)) {
+        println("Transferido com sucesso")
+    } else {
+        println("Falha na tranferencia")
+    }
+
+    println("Saldo Alex: R$${contaAlex.saldo}");
+    println("Saldo Fran: R$${contaFran.saldo}");
 }
 
-class Conta(var titular: String, var numero: Int) {
+class Conta(
+    val titular: String,
+    val numero: Int
+) {
     var saldo = 0.0
         private set
 
@@ -84,10 +88,9 @@ fun testaCopiasEReferencias() {
 
     println("numeroX $numeroX\nnumeroY $numeroY");
 
-    val contaJoao = Conta("João", 1002)
-    contaJoao.titular = "João"
-    var contaMaria = Conta("Maria", 1003)
-    contaMaria.titular = "Maria"
+    val contaJoao = Conta("João", 1002);
+    var contaMaria = Conta("Maria", 1003);
+
 
     println("titular conta joao: ${contaJoao.titular}")
     println("titular conta maria: ${contaMaria.titular}")
