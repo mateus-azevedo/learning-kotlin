@@ -10,7 +10,7 @@ class Gerente(
 ) {
 
     override fun bonificacao(): Double {
-        return salario * 0.1 + salario;
+        return super.bonificacao() + salario;
     }
 
     fun autentica(senha: Int): Boolean {
