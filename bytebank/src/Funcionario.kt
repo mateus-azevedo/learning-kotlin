@@ -4,6 +4,9 @@ open class Funcionario(
     val salario: Double
 ) {
     open val bonificacao: Double
-        get() = salario * 0.1
+        get() {
+            println("Passando pela bonificacao do Funcionario")
+            return salario * 0.1
+        }
 
 }

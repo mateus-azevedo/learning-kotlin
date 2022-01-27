@@ -11,6 +11,7 @@ class Gerente(
 
     override val bonificacao: Double
         get() {
+            println("Passei pela bonificacao do Gerente")
             return super.bonificacao + salario;
         }
 
