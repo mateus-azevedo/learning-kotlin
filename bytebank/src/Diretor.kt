@@ -9,14 +9,11 @@ class Diretor(
     cpf = cpf,
     salario = salario,
     senha = senha
-), Autenticavel {
+) {
 
     override val bonificacao: Double
         get() {
             return salario + plr;
         }
 
-    override fun autentica(senha: Int): Boolean {
-        return super<FuncionarioAdmin>.autentica(senha)
-    }
 }
