@@ -1,5 +1,5 @@
-import modelo.ContaCorrente
-import modelo.ContaPoupanca
+import br.com.alura.bytebank.modelo.ContaCorrente
+import br.com.alura.bytebank.modelo.ContaPoupanca
 
 fun testaComportamentosConta() {
     val contaAlex = ContaCorrente(titular = "Alex", numero = 1000);
