@@ -1,0 +1,4 @@
+package novoModelo
+
+class Cliente {
+}

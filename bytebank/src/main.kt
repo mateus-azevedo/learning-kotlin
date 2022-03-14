@@ -1,8 +1,9 @@
-import java.lang.String as StringJava
-// uso do alias por tanto o pacote kotlin quanto java possuirem uma classe String
+import modelo.Cliente
+import novoModelo.Cliente as NovoCliente
+// Exemplo de caso de ambiguidade
 
 fun main() {
-    val palavra: kotlin.String = ""
-    val palavraJava: StringJava = StringJava("")
+    val cliente = Cliente(nome = "Alex", cpf = "", senha = 1)
+    val clienteNovo = NovoCliente()
 }
 
