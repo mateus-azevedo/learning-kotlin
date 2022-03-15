@@ -22,11 +22,14 @@ class Endereco(
     }
 
     override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
+        if (this === other) return true                     // verifica a referencia do objeto
+        if (javaClass != other?.javaClass) return false     // verifica se e nulo
 
-        other as Endereco
+        other as Endereco       // casting
 
+        /*
+        **  Verifica cada um dos tipos
+        **/
         if (logradouro != other.logradouro) return false
         if (numero != other.numero) return false
         if (bairro != other.bairro) return false
