@@ -27,4 +27,8 @@ class Endereco(
         }
         return false
     }
+
+    override fun hashCode(): Int { // hashCode precisa bater com o equals
+        return cep.hashCode()
+    }
 }
