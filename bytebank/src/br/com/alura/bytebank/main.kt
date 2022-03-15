@@ -1,30 +1,23 @@
-import br.com.alura.bytebank.modelo.Cliente
 import br.com.alura.bytebank.modelo.Endereco
 
 fun main() {
-    println()
-    println(1)
-    println(1.0)
-    println(true)
-    println("teste")
+    val endereco = Endereco(logradouro = "Rua Vergueiro", complemento = "Alura")
+    val enderecoNovo = Endereco(bairro = "Vila Mariana", numero = 1000)
 
-    val endereco = Endereco()
+    println(endereco.equals(endereco))
 
-    println(endereco)
-    println(Cliente())
+    println(endereco.hashCode())
+    println(enderecoNovo.hashCode())
 
-    imprime()
-    imprime(1)
-    imprime(1.0)
-    imprime(endereco)
+    println(endereco.toString())
+    println(enderecoNovo.toString())
+
+    println("${endereco.javaClass}@${Integer.toHexString(endereco.hashCode())}")
 }
 
-fun imprime() {}
-
-fun imprime(valor: Int) {}
-
-fun imprime(valor: Double) {}
-
-fun imprime(valor: Endereco) {}
+fun imprime(valor: Any) : Any {
+    println(valor)
+    return valor
+}
 
 
