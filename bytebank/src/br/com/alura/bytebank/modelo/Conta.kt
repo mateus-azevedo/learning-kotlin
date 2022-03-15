@@ -1,7 +1,5 @@
 package br.com.alura.bytebank.modelo
 
-var totalContas = 0
-    private set
 
 abstract class Conta(
     val titular: Cliente,
@@ -10,9 +8,16 @@ abstract class Conta(
     var saldo = 0.0
         protected set // os membros conseguem utilizar
 
+    // companion object Contador { // Continua sendo object declarations, mas nao precisa colocar o nome quando utilizamos o Companion
+    companion object {
+        var total = 0
+            private set
+    }
+
     init { // comportamento similar ao constructor secundario
         println("Criando Conta")
-        totalContas++
+        // Contador.total++ // com o uso do companion object esta declaracao fica redundante, porque ele entende que total pertence a classe agora
+        total++ // Usando da forma nao redundante
     }
 
     fun deposita(valor: Double) {
@@ -20,7 +25,7 @@ abstract class Conta(
             this.saldo += valor
     }
 
-     abstract fun saca(valor: Double)
+    abstract fun saca(valor: Double)
 
     fun transfere(valor: Double, destino: Conta): Boolean {
         if (saldo >= valor) {
@@ -30,7 +35,6 @@ abstract class Conta(
         }
 
         return false
-
     }
 
 }
@@ -42,12 +46,9 @@ class ContaCorrente(
     titular = titular,
     numero = numero
 ) {
-    init {
-        totalContas++
-    }
-
     override fun saca(valor: Double) {
         val valorComTaxa = valor + 0.1
+        
         if (this.saldo >= valorComTaxa) {
             this.saldo -= valorComTaxa
         }
@@ -61,10 +62,6 @@ class ContaPoupanca(
     titular = titular,
     numero = numero
 ) {
-    init {
-        totalContas++
-    }
-
     override fun saca(valor: Double) {
         if (this.saldo >= valor) {
             this.saldo -= valor

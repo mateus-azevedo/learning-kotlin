@@ -22,6 +22,7 @@ fun main() {
 
     testaContasDiferentes()
 
-    println("Total de contas: $totalContas")
+    // println("Total de contas: ${Conta.Contador.total}") // Nao precisa especificar contador porque com companion ele entende que pertece a class
+    println("Total de contas: ${Conta.total}")
 }
 
