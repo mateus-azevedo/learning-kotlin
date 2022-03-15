@@ -20,4 +20,11 @@ class Endereco(
             complemento='$complemento')
         """.trimIndent() // raw string
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (other != null && other is Endereco) {
+            return this.cep == other.cep
+        }
+        return false
+    }
 }
