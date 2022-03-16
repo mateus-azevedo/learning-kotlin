@@ -5,7 +5,7 @@ import br.com.alura.bytebank.modelo.Endereco
 fun main() {
     println("inicio main")
 
-    val entrada: String = "1,9"
+    val entrada: String = "1.9"
     val valor: Double? = try {
         entrada.toDouble()
     } catch (e: NumberFormatException) {
