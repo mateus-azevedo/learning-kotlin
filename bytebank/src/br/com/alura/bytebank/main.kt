@@ -6,7 +6,7 @@ fun main() {
     println("inicio main")
 
     val entrada: String = "1.9"
-    val valor: Double? = try {
+    val valorRecebido: Double? = try {
         entrada.toDouble()
     } catch (e: NumberFormatException) {
         println("Problema na conversao")
@@ -14,8 +14,14 @@ fun main() {
         null // valor recebe null
     }
 
-    if (valor != null) {
-        println("valor recebido: $valor")
+    val valorComTaxa: Double? = if (valorRecebido != null) {
+        valorRecebido + 0.1
+    } else {
+        null
+    }
+
+    if (valorRecebido != null) {
+        println("valor recebido: $valorComTaxa")
     } else {
         println("valor invalido")
     }
