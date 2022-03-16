@@ -6,15 +6,19 @@ fun main() {
     println("inicio main")
 
     val entrada: String = "1,9"
-    try {
-        val valor: Double = entrada.toDouble()
-        println("valor recebido: $valor")
+    val valor: Double? = try {
+        entrada.toDouble()
     } catch (e: NumberFormatException) {
         println("Problema na conversao")
         e.printStackTrace()
+        null // valor recebe null
     }
 
-    println("valor recebido: $valor") // Como posso receber este valor?
+    if (valor != null) {
+        println("valor recebido: $valor")
+    } else {
+        println("valor invalido")
+    }
 
     funcao1()
     println("fim main")
