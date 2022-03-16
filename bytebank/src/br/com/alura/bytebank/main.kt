@@ -4,6 +4,18 @@ import br.com.alura.bytebank.modelo.Endereco
 
 fun main() {
     println("inicio main")
+
+    val entrada: String = "1,9"
+    try {
+        val valor: Double = entrada.toDouble()
+        println("valor recebido: $valor")
+    } catch (e: NumberFormatException) {
+        println("Problema na conversao")
+        e.printStackTrace()
+    }
+
+    println("valor recebido: $valor") // Como posso receber este valor?
+
     funcao1()
     println("fim main")
 }
@@ -14,6 +26,7 @@ fun funcao1() {
     try {
         funcao2()
     } catch (e: ClassCastException) {
+        e.printStackTrace()
         println("ClassCastException catched")
     }
 
