@@ -3,9 +3,15 @@ package br.com.alura.bytbank
 import br.com.alura.bytebank.modelo.Endereco
 
 fun main() {
-    // ? - para informar que pode ser nulo
-    var enderecoNulo: Endereco? = null
-    // !! - para informar que não é nulo
-    val enderecoNaoNulo: Endereco = enderecoNulo!!
-    enderecoNaoNulo.logradouro
+    var enderecoNulo: Endereco? = Endereco(logradouro = "Rua Vergueiro")
+    val logradouroNovo: String? = enderecoNulo?.logradouro
+
+//    enderecoNulo = null // funciona mesmo com o let
+
+    enderecoNulo?.let {
+        println(it.logradouro.length)
+        val tamanhoComplemento: Int =
+            it.complemento?.length ?: throw IllegalStateException("Complemento nao pode ser vazio") // Elvis Operator - syntax sugar
+        println(tamanhoComplemento)
+    }
 }
