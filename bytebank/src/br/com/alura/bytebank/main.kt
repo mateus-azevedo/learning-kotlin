@@ -10,20 +10,23 @@ fun main() {
 
 fun funcao1() {
     println("inicio funcao1")
-    funcao2()
+
+    try {
+        funcao2()
+    } catch (e: ClassCastException) {
+        println("ClassCastException catched")
+    }
+
     println("fim funcao1")
 }
 
 fun funcao2() {
     println("inicio funcao2")
-    try {
-        for (i in 1..5) {
-            println(i)
-            val endereco = Any()
-            endereco as Endereco
-        }
-    } catch (e: ClassCastException) {
-        println("ClassCastException catched")
+
+    for (i in 1..5) {
+        println(i)
+        val endereco = Any()
+        endereco as Endereco
     }
 
     println("fim funcao2")
