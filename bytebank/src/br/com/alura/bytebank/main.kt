@@ -5,9 +5,6 @@ import br.com.alura.bytebank.teste.testaExpressao
 
 fun main() {
     println("inicio main")
-
-    testaExpressao()
-
     funcao1()
     println("fim main")
 }
@@ -31,7 +28,10 @@ fun funcao2() {
     for (i in 1..5) {
         println(i)
         val endereco = Any()
-        endereco as Endereco
+
+        throw ClassCastException() // Lançando throw-exception
+//        throw ArithmeticException()
+//        throw NumberFormatException()
     }
 
     println("fim funcao2")
