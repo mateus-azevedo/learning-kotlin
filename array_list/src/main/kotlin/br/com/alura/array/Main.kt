@@ -1,15 +1,21 @@
 package br.com.alura.array
 
 import java.math.BigDecimal
+import java.math.RoundingMode
 
 fun main() {
-    val salarios = bigDecimalArrayOf("1500.55", "2000.00")
+    val salarios = bigDecimalArrayOf("1500.55", "2000.00", "5000.00", "10000.00")
 
     println(salarios.contentToString())
+
+    val aumento = "1.1".toBigDecimal()
+    val salariosComAumento: Array<BigDecimal> = salarios
+        .map { salario -> (salario * aumento).setScale(2, RoundingMode.UP) }
+        .toTypedArray()
+
+    println(salariosComAumento.contentToString())
 }
 
-// vararg - é um tipo especial do Kotlin que possibilita passagem de argumentos variáveis para uma função
-// Pode passar 1 valor, 5 valores, 100 valores e etc
 fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
     return Array<BigDecimal>(valores.size) { index ->
         valores[index].toBigDecimal()
