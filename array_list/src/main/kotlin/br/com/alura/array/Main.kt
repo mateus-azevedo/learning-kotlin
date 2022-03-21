@@ -1,20 +1,48 @@
 package br.com.alura.array
 
 fun main() {
-    val salarios: DoubleArray = doubleArrayOf(1500.50, 2300.0, 5000.0, 8000.0, 10000.0)
-
-    val aumento = 1.1
-    // iterando em cada indice de salarios
-    for (indice in salarios.indices) {
-        salarios[indice] = salarios[indice] * aumento
+    val serie: IntRange = 1.rangeTo(10)
+    println("IntRange")
+    for (s in serie) {
+        print("$s ")
     }
 
-    println("Iterado em cada indice\n${salarios.contentToString()}\n")
+    println("\n")
 
-    // utilizando o metodo forEachIndexed
-    salarios.forEachIndexed { indice, salario ->
-        salarios[indice] = salario * aumento
+    val numerosPares = 2..100 step 2
+    println("2..100 step 2")
+    for (numeroPar in numerosPares) {
+        print("$numeroPar ")
     }
 
-    println("Utilizado forEachIndexed\n${salarios.contentToString()}\n")
+    println("\n")
+
+    val numerosParesReverso = 100 downTo 0 step 2
+    println("variable.forEach {print(\"\$it \")}")
+    numerosParesReverso.forEach { print("$it ") }
+
+    println("\n")
+
+    val numPares = 2.until(100) step 2
+    println("2.until(100) step 2")
+    for (numeroPar in numPares) {
+        print("$numeroPar ")
+    }
+
+    println("\n")
+
+    val intervalo = 1500.0..5000.0
+    var salario = 5000.0
+    println("intervalo = 1500.0..5000.0\nsalario = 5000.0")
+    if (salario in intervalo)
+        println("O salário está dentro do intervalo")
+    else
+        println("O salário não está dentro do intervalo")
+
+    salario = 5001.0
+    println("\nintervalo = 1500.0..5000.0\nsalario = 5001.0")
+    if (salario in intervalo)
+        println("O salário está dentro do intervalo")
+    else
+        println("O salário não está dentro do intervalo")
 }
