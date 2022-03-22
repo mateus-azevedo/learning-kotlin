@@ -10,9 +10,12 @@ package br.com.alura
 
 fun main() {
     val banco = BancoDeNomes()
-    // banco.nomes.add("Freeza")
+    val nomesSalvos: MutableCollection<String> = banco.nomes as MutableCollection<String>
+
+    nomesSalvos.add("Baby Vegeta")
     banco.salva("Freeza")
-    println(banco.nomes)
+
+    println(nomesSalvos)
     println(BancoDeNomes().nomes)
 }
 
