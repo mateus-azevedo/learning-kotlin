@@ -25,9 +25,7 @@ fun main() {
     }
     println(gastoTotal)
 
-    val salariosOrdenados = salariosComAumento.sorted() // Ordena os numeros do menor para o maior
-    val tresUltimosSalarios = salariosOrdenados.takeLast(3).toTypedArray()  // take() = pega os primeiros numeros | takeLast pega os ultimos numeros
-    val mediaDosTresMaioresSalarios = tresUltimosSalarios.media()
+    val mediaDosTresMaioresSalarios = salariosComAumento.sorted().takeLast(3).toTypedArray().media()
     println(mediaDosTresMaioresSalarios)
 }
 
