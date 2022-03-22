@@ -9,8 +9,28 @@ package br.com.alura
  * */
 
 fun main() {
-    val nomes: List<String> =
-        listOf("Goku", "Vegeta", "Kuririn", "Trunks", "Piccolo", "Gohan", "Mr.Satan", "Majin Boo", "Deus Yamcha")
+    val banco = BancoDeNomes()
+    // banco.nomes.add("Freeza")
+    banco.salva("Freeza")
+    println(banco.nomes)
+    println(BancoDeNomes().nomes)
+}
+
+class BancoDeNomes {
+    /**
+     * Caso trabalhe com qualquer coleção mutável - evite o máximo possível deixá-la exposta
+     * */
+    private val dados = mutableListOf<String>()
+    val nomes: Collection<String> get() = dados
+
+    fun salva(nome: String) {
+        dados.add(nome)
+    }
+}
+
+fun testaColecao() {
+    val nomes: Collection<String> =
+        mutableListOf("Goku", "Vegeta", "Kuririn", "Trunks", "Piccolo", "Gohan", "Mr.Satan", "Majin Boo", "Deus Yamcha")
     for (nome in nomes) {
         println(nome)
     }
