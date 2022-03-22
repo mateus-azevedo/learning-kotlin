@@ -26,4 +26,18 @@ fun main() {
         anoPublicacao = 1865,
         editora = "Editora B"
     )
+
+    val livros: MutableList<Livro> = mutableListOf(livro1, livro2, livro3, livro4)
+
+    livros.add(
+        Livro(
+            titulo = "Sagarana",
+            autor = "João Guimarães Rosa",
+            anoPublicacao = 1946
+        )
+    )
+
+    println(livros)
+    livros.remove(livro1)
+    println(livros)
 }
