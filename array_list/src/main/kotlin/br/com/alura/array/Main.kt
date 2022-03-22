@@ -14,6 +14,9 @@ fun main() {
         .toTypedArray()
 
     println(salariosComAumento.contentToString())
+
+    val gastoInicial = salariosComAumento.somatoria()
+    println(gastoInicial)
 }
 
 private fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal): BigDecimal =
@@ -26,5 +29,11 @@ private fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal): Bi
 fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
     return Array<BigDecimal>(valores.size) { index ->
         valores[index].toBigDecimal()
+    }
+}
+
+fun Array<BigDecimal>.somatoria(): BigDecimal {
+    return this.reduce { acumulador, valor ->
+        acumulador + valor
     }
 }
