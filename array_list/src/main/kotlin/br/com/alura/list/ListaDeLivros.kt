@@ -1,6 +1,6 @@
 package br.com.alura.list
 
-fun main() {
+fun ListaDeLivros() {
     val livro1 = Livro(
         titulo = "Grande Sertão: Veredas",
         autor = "João Guimarães Rosa",
