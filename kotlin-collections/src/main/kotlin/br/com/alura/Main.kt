@@ -17,14 +17,17 @@ fun main() {
 }
 
 class BancoDeNomes {
-    /**
-     * Caso trabalhe com qualquer coleção mutável - evite o máximo possível deixá-la exposta
-     * */
-    private val dados = mutableListOf<String>()
-    val nomes: Collection<String> get() = dados
+    val nomes: Collection<String> get() = Companion.dados
 
     fun salva(nome: String) {
-        dados.add(nome)
+        Companion.dados.add(nome)
+    }
+
+    companion object {
+        /**
+         * Caso trabalhe com qualquer coleção mutável - evite o máximo possível deixá-la exposta
+         * */
+        private val dados = mutableListOf<String>()
     }
 }
 
