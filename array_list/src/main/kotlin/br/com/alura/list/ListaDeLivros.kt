@@ -54,6 +54,7 @@ fun ListaDeLivros() {
 
     listaDeLivros
         .filter { it.autor == "João Guimarães Rosa" }
+        .sortedBy { it.anoPublicacao }
         .imprimeComMarcadores()
 }
 
