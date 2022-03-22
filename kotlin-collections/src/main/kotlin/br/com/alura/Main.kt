@@ -1,9 +1,20 @@
 package br.com.alura
 
-fun main(args: Array<String>) {
-    println("Hello World!")
+/**
+ * Iterable - comportamento mais genéricos e limitados
+ * Collection - comportamentos mais específicos em relação ao Iterable
+ * List - comportamentos mais específicos em relação ao Collection
+ *
+ * Veja mais em: https://kotlinlang.org/docs/collections-overview.html
+ * */
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main() {
+    val nomes: List<String> =
+        listOf("Goku", "Vegeta", "Kuririn", "Trunks", "Piccolo", "Gohan", "Mr.Satan", "Majin Boo", "Deus Yamcha")
+    for (nome in nomes) {
+        println(nome)
+    }
+    println(nomes)
+    println("Tem o nome Alex? ${nomes.contains("Gohan")}")
+    println("Tamanho da coleção ${nomes.size}")
 }
