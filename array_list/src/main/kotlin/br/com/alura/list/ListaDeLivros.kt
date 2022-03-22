@@ -51,6 +51,10 @@ fun ListaDeLivros() {
 
     println("\t-- Ordenado por Nome do Autor --")
     livros.sortedBy { it.autor }.imprimeComMarcadores()
+
+    listaDeLivros
+        .filter { it.autor == "João Guimarães Rosa" }
+        .imprimeComMarcadores()
 }
 
 fun List<Livro>.imprimeComMarcadores() {
