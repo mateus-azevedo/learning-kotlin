@@ -53,7 +53,7 @@ fun ListaDeLivros() {
     livros.sortedBy { it.autor }.imprimeComMarcadores()
 
     listaDeLivros
-        .filter { it.autor == "João Guimarães Rosa" }
+        .filter { it.autor.startsWith("João") }
         .sortedBy { it.anoPublicacao }
         .imprimeComMarcadores()
 }
