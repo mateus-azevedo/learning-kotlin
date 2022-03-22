@@ -13,3 +13,11 @@ fun Array<BigDecimal>.somatoria(): BigDecimal {
         acumulador + valor
     }
 }
+
+fun Array<BigDecimal>.media(): BigDecimal {
+    return if (this.isEmpty()) {
+        BigDecimal.ZERO
+    } else {
+        this.somatoria() / this.size.toBigDecimal()
+    }
+}
