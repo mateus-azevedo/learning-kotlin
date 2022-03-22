@@ -20,7 +20,7 @@ fun main() {
 }
 
 class BancoDeNomes {
-    val nomes: Collection<String> get() = Companion.dados
+    val nomes: Collection<String> get() = Companion.dados.toList() // conversão possivel por List ser compátivel com Collections
 
     fun salva(nome: String) {
         Companion.dados.add(nome)
