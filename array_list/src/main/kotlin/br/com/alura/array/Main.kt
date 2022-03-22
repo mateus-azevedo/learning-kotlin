@@ -27,12 +27,19 @@ fun main() {
     }
     println(gastoTotal)
 
-    val mediaDosTresMaioresSalarios = salariosComAumento
+    val mediaTresMaioresSalarios = salariosComAumento
         .sorted()
         .takeLast(3)
         .toTypedArray()
         .media()
-    println(mediaDosTresMaioresSalarios)
+    println(mediaTresMaioresSalarios)
+
+    val mediaTresMenoresSalarios = salariosComAumento
+        .sorted()
+        .take(3)
+        .toTypedArray()
+        .media()
+    println(mediaTresMenoresSalarios)
 }
 
 private fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal): BigDecimal =
