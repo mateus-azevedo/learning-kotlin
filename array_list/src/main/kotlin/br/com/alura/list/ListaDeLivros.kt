@@ -42,7 +42,15 @@ fun ListaDeLivros() {
     livros.imprimeComMarcadores()
 
     val ordenadoAnoPublicacao: List<Livro> = livros.sorted()
+    println("\t-- Ordenado por Ano de Publicação --")
     ordenadoAnoPublicacao.imprimeComMarcadores()
+
+    val ordernadoPorTitulo = livros.sortedBy { it.titulo }
+    println("\t-- Ordenado por Titulo do Livro --")
+    ordernadoPorTitulo.imprimeComMarcadores()
+
+    println("\t-- Ordenado por Nome do Autor --")
+    livros.sortedBy { it.autor }.imprimeComMarcadores()
 }
 
 fun List<Livro>.imprimeComMarcadores() {
@@ -50,4 +58,5 @@ fun List<Livro>.imprimeComMarcadores() {
         " - ${it.titulo} de ${it.autor}"
     }
     println("#### Lista de Livros ####\n$tituloFormatado")
+    println()
 }
