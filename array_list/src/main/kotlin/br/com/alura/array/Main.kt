@@ -1,6 +1,8 @@
 package br.com.alura.array
 
-import br.com.alura.array.funcoes.*
+import br.com.alura.array.funcoes.bigDecimalArrayOf
+import br.com.alura.array.funcoes.media
+import br.com.alura.array.funcoes.somatoria
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -25,7 +27,11 @@ fun main() {
     }
     println(gastoTotal)
 
-    val mediaDosTresMaioresSalarios = salariosComAumento.sorted().takeLast(3).toTypedArray().media()
+    val mediaDosTresMaioresSalarios = salariosComAumento
+        .sorted()
+        .takeLast(3)
+        .toTypedArray()
+        .media()
     println(mediaDosTresMaioresSalarios)
 }
 
