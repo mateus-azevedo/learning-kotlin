@@ -1,5 +1,6 @@
 package br.com.alura.array
 
+import br.com.alura.array.funcoes.*
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -31,15 +32,3 @@ private fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal): Bi
     } else {
         (salario * aumento).setScale(2, RoundingMode.UP)
     }
-
-fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
-    return Array<BigDecimal>(valores.size) { index ->
-        valores[index].toBigDecimal()
-    }
-}
-
-fun Array<BigDecimal>.somatoria(): BigDecimal {
-    return this.reduce { acumulador, valor ->
-        acumulador + valor
-    }
-}
