@@ -5,5 +5,5 @@ fun main() {
     val assistiramCursoKotlin: List<String> = listOf("Alex", "Paulo", "Maria")
     val assistiramAmbos = assistiramCursoAndroid + assistiramCursoKotlin
 
-    println(assistiramAmbos)
+    println(assistiramAmbos.distinct())
 }
