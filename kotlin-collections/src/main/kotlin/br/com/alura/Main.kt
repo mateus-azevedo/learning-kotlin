@@ -1,5 +1,11 @@
 package br.com.alura
 
 fun main() {
-    testaCopia()
+    val assistiramCursoAndroid: List<String> = listOf("Alex", "Fran", "Gui", "Maria")
+    val assistiramCursoKotlin: List<String> = listOf("Alex", "Paulo", "Maria")
+    val assistiramAmbos = mutableListOf<String>()
+
+    assistiramAmbos.addAll(assistiramCursoAndroid)
+    assistiramAmbos.addAll(assistiramCursoKotlin)
+    println(assistiramAmbos)
 }
