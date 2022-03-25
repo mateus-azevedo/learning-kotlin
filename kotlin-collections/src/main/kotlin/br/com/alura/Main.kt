@@ -78,4 +78,29 @@ fun main() {
     println(pedidos - 6)
     println(pedidos - listOf(6, 5))
     println(pedidos)
+
+    // adding and updating entries
+    println("\n* adding and updating entries *")
+    println("adding")
+    pedidos.putAll(listOf(7 to 90.0, 8 to 20.0))
+    // comportamente de sobrescrita
+    pedidos.putAll(listOf(7 to 90.0, 8 to 20.0, 8 to 30.0))
+    println(pedidos)
+    // plus assing
+    pedidos += listOf(9 to 90.0, 10 to 20.0, 11 to 30.0)
+    println(pedidos)
+
+    println("\nremove entries")
+    pedidos.keys.remove(1)
+    println(pedidos)
+
+    pedidos.values.remove(50.0)
+    println(pedidos)
+
+    pedidos.values.remove(100.0)
+    println(pedidos)
+
+    // minus assing
+    pedidos -= 6
+    println(pedidos)
 }
