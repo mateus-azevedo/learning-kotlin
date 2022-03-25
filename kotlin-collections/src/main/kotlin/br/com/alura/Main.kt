@@ -66,4 +66,16 @@ fun main() {
     }
 
     println(pedidosPares)
+
+    // plus and minus operator
+    println("\n* plus and minus operator *")
+    println("plus")
+    println(pedidos + Pair(7, 90.0))
+    println(pedidos + mapOf(7 to 90.0, 8 to 20.0))
+    println(pedidos)
+
+    println("\nminus")
+    println(pedidos - 6)
+    println(pedidos - listOf(6, 5))
+    println(pedidos)
 }
