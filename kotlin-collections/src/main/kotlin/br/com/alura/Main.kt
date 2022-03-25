@@ -1,12 +1,14 @@
 package br.com.alura
 
 fun main() {
-    val pedidos: MutableMap<Int, Double?> =
+    val pedidos: MutableMap<Int, Double> =
         mutableMapOf(
             Pair(1, 20.0),
-            Pair(2, 43.0),
+            Pair(2, 64.0),
             3 to 50.0, // método infix
-            4 to null
+            4 to 100.0,
+            5 to 150.0,
+            6 to 80.0
         )
 
     /**
@@ -42,4 +44,26 @@ fun main() {
     for (valor in pedidos.values) {
         println("Valor do pedido: $valor")
     }
+
+    pedidos.filter { (numero, valor) ->
+        true
+    }
+
+    val pedidosFiltrados = pedidos.filter { (numero, valor) ->
+        numero % 2 == 0 && valor > 50.0
+    }
+
+    println(pedidosFiltrados);
+
+    val pedidosAcima = pedidos.filterValues { valor ->
+        valor > 70.0
+    }
+
+    println(pedidosAcima)
+
+    val pedidosPares = pedidos.filterKeys { numero ->
+        numero % 2 == 0
+    }
+
+    println(pedidosPares)
 }
