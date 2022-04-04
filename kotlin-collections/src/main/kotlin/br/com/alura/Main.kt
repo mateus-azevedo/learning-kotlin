@@ -11,6 +11,15 @@ fun main() {
     val pedidosMapeados: Map<Int, Pedido> = pedidos.associateBy { pedido -> pedido.numero }
     println(pedidosMapeados)
     println(pedidosMapeados[1])
+
+    /**
+     * associateWith tem a ideia contraria ao associate.
+     * */
+    val pedidosFreteGratis: Map<Pedido, Boolean> = pedidos.associateWith { pedido ->
+        pedido.valor > 50.0
+    }
+    println(pedidosFreteGratis)
+    println(pedidosFreteGratis[Pedido(numero=2, valor=60.0)])
 }
 
 data class Pedido(val numero: Int, val valor: Double)
