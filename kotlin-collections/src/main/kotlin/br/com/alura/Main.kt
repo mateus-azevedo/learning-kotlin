@@ -9,7 +9,7 @@ fun main() {
     )
     println(pedidos)
     val pedidosMapeados: Map<Int, Pedido> = pedidos.associate { pedido: Pedido ->
-        Pair(pedido.numero, pedido)
+        pedido.numero to pedido
     }
     println(pedidosMapeados)
     println(pedidosMapeados[1])
