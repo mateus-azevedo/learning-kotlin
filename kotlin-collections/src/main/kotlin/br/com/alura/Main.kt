@@ -16,10 +16,10 @@ fun main() {
     }
     println(minhaFuncaoLambda(15, 10))
 
-    val minhaFuncaoAnonima: () -> Unit = fun () {
-        println("Executa funcao anonima")
+    val minhaFuncaoAnonima: (Int, Int) -> Int = fun (a, b): Int {
+        return a + b
     }
-    println(minhaFuncaoAnonima())
+    println(minhaFuncaoAnonima(20, 10))
 }
 
 private fun testaTipoFuncaoClasse() {
