@@ -10,8 +10,5 @@ fun main() {
     Endereco(logradouro = "rua presidente vargas", numero = 1234)
         .let { endereco ->
             "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
-        }.let { enderecoMaiusculo ->
-            println(enderecoMaiusculo)
-        }
-
+        }.let (::println)
 }
