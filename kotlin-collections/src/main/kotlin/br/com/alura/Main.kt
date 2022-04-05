@@ -21,11 +21,11 @@ fun main() {
     }
     println(minhaFuncaoAnonima(20, 10))
 
-    val calculaBonificacao: (salario: Double) -> Double = lambda@{
-        if (it > 1000.0) {
-            return@lambda it + 50
+    val calculaBonificacao: (salario: Double) -> Double = lambda@{ salario ->
+        if (salario > 1000.0) {
+            return@lambda salario + 50
         }
-        return@lambda it + 100.0
+        return@lambda salario + 100.0
     }
     println(calculaBonificacao(1100.0))
 }
