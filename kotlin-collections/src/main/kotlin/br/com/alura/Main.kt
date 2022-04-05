@@ -4,21 +4,22 @@ package br.com.alura
  * (::) = Referencia da funcao
  */
 fun main() {
-    testaTipoFuncaoReferencia()
-    println()
-    testaTipoFuncaoClasse()
+//    testaTipoFuncaoReferencia()
+//    println()
+//    testaTipoFuncaoClasse()
     /**
      * Estas duas implementações não são reutilizáveis!!
      * Lambda e Função anônima
      */
-//    val minhaFuncaoLambda: () -> Unit = {
-//        println("Executa como lambda")
-//    }
-//    println(minhaFuncaoLambda())
-//    val minhaFuncaoAnonima: () -> Unit = fun () {
-//        println("Executa funcao anonima")
-//    }
-//    println(minhaFuncaoAnonima())
+    val minhaFuncaoLambda: (Int, Int) -> Int = { a, b -> // quando não usar o parâmetro podemos por _, b
+        a + b
+    }
+    println(minhaFuncaoLambda(15, 10))
+
+    val minhaFuncaoAnonima: () -> Unit = fun () {
+        println("Executa funcao anonima")
+    }
+    println(minhaFuncaoAnonima())
 }
 
 private fun testaTipoFuncaoClasse() {
