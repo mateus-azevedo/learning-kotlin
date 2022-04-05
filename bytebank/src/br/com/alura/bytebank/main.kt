@@ -7,9 +7,11 @@ fun main() {
     val enderecoEmMaiusculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
     println(enderecoEmMaiusculo)
 
-    val enderecoMaiusculoLet: String = Endereco(logradouro = "rua presidente vargas", numero = 1234)
+    Endereco(logradouro = "rua presidente vargas", numero = 1234)
         .let { endereco ->
             "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
+        }.let { enderecoMaiusculo ->
+            println(enderecoMaiusculo)
         }
-    println(enderecoMaiusculoLet)
+
 }
