@@ -11,4 +11,10 @@ fun main() {
         .let { endereco ->
             "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
         }.let (::println)
+
+    val enderecoComComplemento = listOf(
+        Endereco(complemento = "casa"),
+        Endereco(),
+        Endereco(complemento = "apartamento")
+    ).filter { endereco -> endereco?.complemento?.isNotEmpty() == true }.let(::println)
 }
