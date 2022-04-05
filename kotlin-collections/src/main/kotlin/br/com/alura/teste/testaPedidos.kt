@@ -1,4 +1,4 @@
-package br.com.alura
+package br.com.alura.teste
 
 fun testaPedidos() {
     val pedidos: List<Pedido> = listOf(

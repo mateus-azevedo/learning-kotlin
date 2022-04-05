@@ -1,4 +1,4 @@
-package br.com.alura
+package br.com.alura.teste
 
 fun testaFuncaoAnonima() {
     val minhaFuncaoAnonima: (Int, Int) -> Int = fun(a, b): Int {

@@ -1,4 +1,4 @@
-package br.com.alura
+package br.com.alura.teste
 
 /**
  * Iterable - comportamento mais genéricos e limitados
