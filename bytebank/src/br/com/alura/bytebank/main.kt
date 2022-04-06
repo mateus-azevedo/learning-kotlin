@@ -17,4 +17,13 @@ fun main() {
         Endereco(),
         Endereco(complemento = "apartamento")
     ).filter { endereco -> endereco?.complemento?.isNotEmpty() == true }.let(::println)
+
+    soma(1, 5) {
+        println(it)
+    }
+}
+
+fun soma(a: Int, b: Int, resultado: (Int) -> Unit) {
+    println("soma sendo efetuada")
+    resultado(a + b)
 }
