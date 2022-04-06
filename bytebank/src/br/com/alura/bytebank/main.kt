@@ -1,6 +1,8 @@
 package br.com.alura.bytbank
 
+import br.com.alura.bytebank.modelo.Autenticavel
 import br.com.alura.bytebank.modelo.Endereco
+import br.com.alura.bytebank.modelo.SistemaInterno
 
 fun main() {
     val endereco = Endereco(logradouro = "rua vergueiro", numero = 3185)
@@ -20,6 +22,15 @@ fun main() {
 
     soma(1, 5) {
         println(it)
+    }
+
+    val autenticavel = object : Autenticavel {
+        val senha = 1234
+        override fun autentica(senha: Int) = this.senha == senha
+    }
+
+    SistemaInterno().entra(autenticavel, 1234) {
+        println("realizar pagamento")
     }
 }
 
