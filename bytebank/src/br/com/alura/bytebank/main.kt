@@ -10,8 +10,12 @@ fun main() {
     println(enderecoEmMaiusculo)
 
     Endereco(logradouro = "rua presidente vargas", numero = 1234)
-        .let { endereco ->
-            "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
+        /**
+         * Scope functions
+         * https://kotlinlang.org/docs/scope-functions.html
+         */
+        .run {
+            "$logradouro, $numero".toUpperCase()
         }.let (::println)
 
     val enderecoComComplemento = listOf(
