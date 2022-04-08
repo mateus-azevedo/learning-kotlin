@@ -9,6 +9,10 @@ fun main() {
 //    val enderecoEmMaiusculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
 //    println(enderecoEmMaiusculo)
 
+    run {
+        println("execução do run sem extensão")
+    }
+
     val endereco = Endereco(logradouro = "rua presidente vargas", numero = 1234)
     /**
      * Scope functions
