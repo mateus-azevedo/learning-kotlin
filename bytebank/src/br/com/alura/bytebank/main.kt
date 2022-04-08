@@ -5,18 +5,20 @@ import br.com.alura.bytebank.modelo.Endereco
 import br.com.alura.bytebank.modelo.SistemaInterno
 
 fun main() {
-    val endereco = Endereco(logradouro = "rua vergueiro", numero = 3185)
-    val enderecoEmMaiusculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
-    println(enderecoEmMaiusculo)
+//    val endereco = Endereco(logradouro = "rua vergueiro", numero = 3185)
+//    val enderecoEmMaiusculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
+//    println(enderecoEmMaiusculo)
 
-    Endereco(logradouro = "rua presidente vargas", numero = 1234)
-        /**
-         * Scope functions
-         * https://kotlinlang.org/docs/scope-functions.html
-         */
-        .run {
-            "$logradouro, $numero".toUpperCase()
-        }.let (::println)
+    val endereco = Endereco(logradouro = "rua presidente vargas", numero = 1234)
+    /**
+     * Scope functions
+     * https://kotlinlang.org/docs/scope-functions.html
+     */
+    with(endereco) {
+        "$logradouro, $numero".toUpperCase()
+    }.let { enderecoEmMaiusculo: String ->
+        println(enderecoEmMaiusculo)
+    }
 
     val enderecoComComplemento = listOf(
         Endereco(complemento = "casa"),
