@@ -9,6 +9,11 @@ fun main() {
 //    val enderecoEmMaiusculo = "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
 //    println(enderecoEmMaiusculo)
 
+    /**
+     * Scope functions
+     * https://kotlinlang.org/docs/scope-functions.html
+     */
+
     run {
         println("execução do run sem extensão")
     }
@@ -17,15 +22,14 @@ fun main() {
         logradouro = "rua vergueiro"
         numero = 3185
     }
-    /**
-     * Scope functions
-     * https://kotlinlang.org/docs/scope-functions.html
-     */
+
     with(endereco) {
         "$logradouro, $numero".toUpperCase()
     }.let { enderecoEmMaiusculo: String ->
         println(enderecoEmMaiusculo)
     }
+
+    /** * * * * **/
 
     val enderecoComComplemento = listOf(
         Endereco(complemento = "casa"),
