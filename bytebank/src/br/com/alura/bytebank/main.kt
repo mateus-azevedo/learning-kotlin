@@ -13,7 +13,10 @@ fun main() {
         println("execução do run sem extensão")
     }
 
-    val endereco = Endereco(logradouro = "rua presidente vargas", numero = 1234)
+    val endereco = Endereco().apply {
+        logradouro = "rua vergueiro"
+        numero = 3185
+    }
     /**
      * Scope functions
      * https://kotlinlang.org/docs/scope-functions.html
