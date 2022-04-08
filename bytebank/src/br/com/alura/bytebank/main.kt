@@ -18,7 +18,9 @@ fun main() {
         println("execução do run sem extensão")
     }
 
-    val endereco = Endereco().apply {
+    val endereco = Endereco()
+        .also { println("Criando endereço") }
+        .apply {
         logradouro = "rua vergueiro"
         numero = 3185
     }
